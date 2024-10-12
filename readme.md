@@ -1,6 +1,6 @@
-# Project Deployment Repository
+# Scripts Repository
 
-Welcome to the **Project Deployment Repository**! This repository streamlines the deployment of multiple interconnected applications and services using Docker Compose. Whether you're deploying the frontend, backend API, worker service, or essential infrastructure components like RabbitMQ, Redis, and PostgreSQL, this guide will help you get everything up and running with ease.
+Welcome to the **Scripts Repository**! This repository streamlines the deployment of multiple interconnected applications and services using Docker Compose. Whether you're deploying the frontend, backend API, worker service, or essential infrastructure components like RabbitMQ, Redis, and PostgreSQL, this guide will help you get everything up and running with ease.
 
 ## Table of Contents
 
