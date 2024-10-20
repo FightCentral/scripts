@@ -11,7 +11,7 @@ services:
 
   api:
     build: ../api
-    profiles: ["apps"]
+    profiles: ["apps", "deploy"]
     environment:
       - DATABASE_HOST=db
       - POSTGRES_USER=${POSTGRES_USER}
@@ -28,7 +28,7 @@ services:
 
   worker:
     build: ../worker
-    profiles: ["apps"]
+    profiles: ["apps", "deploy"]
     environment:
       - RABBITMQ_URL=amqp://mq
     depends_on:
@@ -38,7 +38,7 @@ services:
 
   db:
     image: postgres:17.0-alpine3.20
-    profiles: ["services"]
+    profiles: ["services", "deploy"]
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -55,7 +55,7 @@ services:
 
   mq:
     image: rabbitmq:4.0.2-management-alpine
-    profiles: ["services"]
+    profiles: ["services", "deploy"]
     ports:
       - '15672:15672'
       - '5672:5672'
@@ -69,7 +69,7 @@ services:
 
   redis:
     image: redis:7.4.1-alpine
-    profiles: ["services"]
+    profiles: ["services", "deploy"]
     networks:
       - app-network
     healthcheck:

@@ -173,6 +173,19 @@ What Happens:
 - Builds and starts the db, mq, and redis services.
 - Applications (frontend, api, worker) are not started.
 
+### 3. Deploy projects
+
+To start all the apps except the frontend (deployed elsewhere):
+
+```bash
+./deploy.sh
+```
+
+What Happens:
+
+- Docker Compose activates only the `deploy` profile.
+- Builds and starts the api, worker, db, mq, and redis services.
+
 ## Healthchecks and Dependencies
 
 ### Healthchecks
